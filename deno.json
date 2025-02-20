@@ -1,6 +1,7 @@
 {
   "tasks": {
-    "dev": "watch deno run -A main.tsx"
+    "dev": "watch deno run -A main.tsx --dev",
+    "start": "deno run -A main.tsx"
   },
   "lint": {
     "rules": {

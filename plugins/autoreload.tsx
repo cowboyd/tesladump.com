@@ -19,7 +19,15 @@ export interface AutoreloadOptions {
 
 const StreamingScopeContext = createContext<Scope>("autoreload.streaming");
 
-export function* autoreloadPlugin(): Operation<RevolutionPlugin> {
+export interface Options {
+  enabled?: boolean;
+}
+
+export function* autoreloadPlugin(opts: Options): Operation<RevolutionPlugin> {
+  if (!opts.enabled) {
+    return {};
+  }
+
   yield* StreamingScopeContext.set(yield* useScope());
 
   return {

@@ -1,0 +1,50 @@
+on:
+  workflow_dispatch: # Allows manual trigger
+  push:
+    branches:
+      - main
+
+jobs:
+  staticalize:
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write # Needed for auth with Deno Deploy
+      contents: read # Needed to clone the repository
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      - run: |
+          deno task start &
+          until curl --output /dev/null --silent --head --fail http://127.0.0.1:8000; do
+            printf '.'
+            sleep 1
+          done
+
+      - name: Download Staticalize
+        run: |
+          wget https://github.com/thefrontside/staticalize/releases/download/v0.0.1/staticalize-linux.tar.gz \
+            -O /tmp/staticalize-linux.tar.gz
+          tar -xzf /tmp/staticalize-linux.tar.gz -C /usr/local/bin
+          chmod +x /usr/local/bin/staticalize-linux
+
+      - name: Staticalize
+        run: |
+          staticalize-linux \
+            --site=http://127.0.0.1:8000 \
+            --output=dist \
+            --base=https://teslabuyback.deno.dev/
+
+      - name: Upload to Deno Deploy
+        uses: denoland/deployctl@v1
+        with:
+          project: teslabuyback
+          entrypoint: "https://jsr.io/@std/http/1.0.12/file_server.ts"
+          root: dist

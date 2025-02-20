@@ -35,7 +35,7 @@ export function* useAbsoluteUrl(path: string): Operation<string> {
 }
 
 export function* useAbsoluteUrlFactory(): Operation<(path: string) => string> {
-  let base = yield* BaseUrl;
+  let base = yield* BaseUrl.expect();
   let request = yield* CurrentRequestContext.expect();
 
   return (path) => {

@@ -7,7 +7,7 @@ import { autoreloadPlugin } from "./plugins/autoreload.tsx";
 import { currentRequestPlugin } from "./plugins/current-request.ts";
 import { sitemapPlugin, route } from "./plugins/sitemap.ts";
 
-await main(function* () {
+await main(function* (args) {
   let css = yield* useTailwind({ input: "main.css", outdir: "build" });
 
   let revolution = createRevolution({
@@ -18,7 +18,7 @@ await main(function* () {
     plugins: [
       currentRequestPlugin(),
       sitemapPlugin(),
-      yield* autoreloadPlugin(),
+      yield* autoreloadPlugin({ enabled: !!args.find(a => a === "--dev")}),
       
     ],
   });
