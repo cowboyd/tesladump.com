@@ -8,6 +8,10 @@ export function indexRoute(): SitemapRoute<JSXElement> {
         <html lang="en-US" dir="ltr">
           <head>
             <meta charset="UTF-8" />
+            <meta
+              name="description"
+              content="Tesla owners don't want to support Elon Musk's hostile takeover of the American Government. Help them do the right thing"
+            />
             <title>Tesla Buyback</title>
             <meta
               name="viewport"
