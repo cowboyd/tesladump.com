@@ -1,25 +1,21 @@
 import { main, suspend } from "effection";
 import { createRevolution } from "revolution";
-import { useTailwind } from "./plugins/tailwind.ts";
+import { tailwindPlugin } from "./plugins/tailwind.ts";
 import { indexRoute } from "./routes/index-route.tsx";
-import { assetRoute } from "./plugins/asset-route.ts";
 import { autoreloadPlugin } from "./plugins/autoreload.tsx";
 import { currentRequestPlugin } from "./plugins/current-request.ts";
-import { sitemapPlugin, route } from "./plugins/sitemap.ts";
+import { route, sitemapPlugin } from "./plugins/sitemap.ts";
 
 await main(function* (args) {
-  let css = yield* useTailwind({ input: "main.css", outdir: "build" });
-
   let revolution = createRevolution({
     app: [
-      route("/", indexRoute(css)),
-      route("/build(.*)", assetRoute("build")),
+      route("/", indexRoute()),
     ],
     plugins: [
       currentRequestPlugin(),
       sitemapPlugin(),
-      yield* autoreloadPlugin({ enabled: !!args.find(a => a === "--dev")}),
-      
+      yield* tailwindPlugin({ input: "main.css", outdir: "twind" }),
+      yield* autoreloadPlugin({ enabled: !!args.find((a) => a === "--dev") }),
     ],
   });
 
