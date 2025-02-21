@@ -5,11 +5,13 @@ import { indexRoute } from "./routes/index-route.tsx";
 import { autoreloadPlugin } from "./plugins/autoreload.tsx";
 import { currentRequestPlugin } from "./plugins/current-request.ts";
 import { route, sitemapPlugin } from "./plugins/sitemap.ts";
+import { forOwnersRoute } from "./routes/for-owners-route.tsx";
 
 await main(function* (args) {
   let revolution = createRevolution({
     app: [
       route("/", indexRoute()),
+      route("/for-owners", forOwnersRoute()),
     ],
     plugins: [
       currentRequestPlugin(),

@@ -1,7 +1,7 @@
 import { JSXChild, JSXElement } from "revolution";
 import { SitemapRoute } from "../plugins/sitemap.ts";
 
-export function indexRoute(): SitemapRoute<JSXElement> {
+export function forOwnersRoute(): SitemapRoute<JSXElement> {
   return {
     *handler() {
       return (
@@ -19,22 +19,7 @@ export function indexRoute(): SitemapRoute<JSXElement> {
             />
           </head>
           <body>
-            <p class="p-8 text-xl text-center">
-              We bought in to the EV revolution, not a billionaire's personal
-              takeover of the United States government.
-            </p>
-            <p class="px-8 text-xl text-center">
-              Tesla Buyback helps owners offload their Teslas and buy a new car
-              without having to bear the brunt of the cost
-            </p>
-            <section class="flex flex-col justify-evenly sm:flex-row pt-10">
-              <Card href="for-owners">
-                I am a Tesla owner.
-              </Card>
-              <Card href="concerned">
-                I want to help a Tesla owner do the right thing
-              </Card>
-            </section>
+	    4 owners
           </body>
         </html>
       );
