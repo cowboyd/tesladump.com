@@ -28,7 +28,7 @@ export function indexRoute(): SitemapRoute<JSXElement> {
               without having to bear the brunt of the cost
             </p>
             <section class="flex flex-col justify-evenly sm:flex-row pt-10">
-              <Card href="for-owners">
+              <Card href="owners">
                 I am a Tesla owner.
               </Card>
               <Card href="concerned">
