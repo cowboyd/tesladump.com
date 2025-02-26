@@ -36,14 +36,14 @@ export function* tailwindPlugin(
       return html;
     },
     *http(request, next) {
-      let url = new URL(request.url)
+      let url = new URL(request.url);
 
       if (url.pathname === css.csspath) {
-	return yield* call(() => serveFile(request, css.filepath));
+        return yield* call(() => serveFile(request, css.filepath));
       } else {
-	return yield* next(request);
+        return yield* next(request);
       }
-    }
+    },
   };
 }
 
@@ -80,8 +80,8 @@ function* compileCSS(options: TailwindOptions): Operation<CSS> {
     return {
       filepath: outpath,
       csspath: `/${outpath}`,
-      href: `/${outpath}?${hash}`
-    }
+      href: `/${outpath}?${hash}`,
+    };
   }
   throw new Error(`failed to generate ${outpath}`);
 }

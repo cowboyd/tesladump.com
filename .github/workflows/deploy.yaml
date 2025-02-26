@@ -40,11 +40,11 @@ jobs:
           staticalize-linux \
             --site=http://127.0.0.1:8000 \
             --output=dist \
-            --base=https://teslabuyback.deno.dev/
+            --base=https://tesladump.com/
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: teslabuyback
+          project: tesladump
           entrypoint: "https://jsr.io/@std/http/1.0.12/file_server.ts"
           root: dist

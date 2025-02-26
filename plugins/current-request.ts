@@ -2,7 +2,7 @@ import type { RevolutionPlugin } from "revolution";
 import { createContext, type Operation } from "effection";
 import { posixNormalize } from "https://deno.land/std@0.203.0/path/_normalize.ts";
 
-const CurrentRequestContext =  createContext<Request>("current.request");
+const CurrentRequestContext = createContext<Request>("current.request");
 
 const BaseUrl = createContext<URL>("baseUrl");
 
@@ -21,7 +21,7 @@ export function currentRequestPlugin(): RevolutionPlugin {
       }
 
       return yield* next(request);
-    }
+    },
   };
 }
 

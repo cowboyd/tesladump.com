@@ -12,7 +12,7 @@ export function ownersRoute(): SitemapRoute<JSXElement> {
               name="description"
               content="Tesla Owners: this is not what I bought into"
             />
-            <title>Tesla Buyback</title>
+            <title>Tesla Dump: Help me offload my Tesla at a great price</title>
             <meta
               name="viewport"
               content="width=device-width, initial-scale=1.0"
@@ -52,10 +52,10 @@ export function ownersRoute(): SitemapRoute<JSXElement> {
                 </p>
               </section>
               <section>
-                <h2>Tesla Buyback can help</h2>
+                <h2>Tesla Dump can help</h2>
                 <p>
                   We understand that it wasn't your choice to have all this
-                  dropped onto your shoulders. That's why Tesla buyback raises
+                  dropped onto your shoulders. That's why Tesla Dump raises
                   money to help oweners like you drop Elon's baggage, get into a
                   new car, and get on with their lives. We'll get you a fair
                   price near the resale value you <em>expected</em>{" "}
