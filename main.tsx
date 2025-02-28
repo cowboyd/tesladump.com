@@ -6,12 +6,14 @@ import { autoreloadPlugin } from "./plugins/autoreload.tsx";
 import { currentRequestPlugin } from "./plugins/current-request.ts";
 import { route, sitemapPlugin } from "./plugins/sitemap.ts";
 import { ownersRoute } from "./routes/owners-route.tsx";
+import { volunteersRoute} from "./routes/volunteers-route.tsx";
 
 await main(function* (args) {
   let revolution = createRevolution({
     app: [
       route("/", indexRoute()),
       route("/owners", ownersRoute()),
+      route("/volunteers", volunteersRoute()),
     ],
     plugins: [
       currentRequestPlugin(),

@@ -1,7 +1,7 @@
 import { JSXChild, JSXElement } from "revolution";
 import { SitemapRoute } from "../plugins/sitemap.ts";
 
-export function indexRoute(): SitemapRoute<JSXElement> {
+export function volunteersRoute(): SitemapRoute<JSXElement> {
   return {
     *handler() {
       return (
@@ -10,31 +10,31 @@ export function indexRoute(): SitemapRoute<JSXElement> {
             <meta charset="UTF-8" />
             <meta
               name="description"
-              content="Tesla owners don't want to support Elon Musk's hostile takeover of the American Government. Help them do the right thing"
+              content="Tesla Dump: We need your help!"
             />
-            <title>Tesla Dump: Unstain yourself</title>
+            <title>Tesla Dump: We need your help</title>
             <meta
               name="viewport"
               content="width=device-width, initial-scale=1.0"
             />
           </head>
           <body>
-            <p class="p-8 text-xl text-center">
-              We bought in to the EV revolution, not a billionaire's personal
-              takeover of the United States government.
-            </p>
-            <p class="px-8 text-xl text-center">
-              Tesla Dump helps owners offload their Teslas and buy a new car
-              without having to bear the brunt of the cost
-            </p>
-            <section class="flex flex-col justify-evenly sm:flex-row pt-10">
-              <Card href="owners">
-                I am a Tesla owner.
-              </Card>
-              <Card href="volunteers">
-                I want to help a Tesla owner do the right thing
-              </Card>
-            </section>
+            <article class="prose">
+              <section>
+		<h1>You can help rid the earth of Teslas</h1>
+		Chance to have a real impact.
+              </section>
+              <section>
+                <h2>How can I help?</h2>
+                <p>
+                  <ul>
+                    <li>Buy great stuff</li>
+                    <li>Spread the word!</li>
+                    <li>Donate Money</li>
+                  </ul>
+                </p>
+              </section>
+            </article>
           </body>
         </html>
       );
