@@ -19,7 +19,7 @@ export function ownersRoute(): SitemapRoute<JSXElement> {
             />
           </head>
           <body>
-            <article class="prose">
+            <article class="prose mx-auto">
               <section>
                 <h2>This isn't what I signed up for</h2>
                 <p>

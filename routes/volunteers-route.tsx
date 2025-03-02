@@ -19,18 +19,43 @@ export function volunteersRoute(): SitemapRoute<JSXElement> {
             />
           </head>
           <body>
-            <article class="prose">
+            <article class="prose container mx-auto">
               <section>
-		<h1>You can help rid the earth of Teslas</h1>
-		Chance to have a real impact.
+                <h1>
+                  Throwing money at Democrats is a waste of time. This isn’t.
+                </h1>
+                <h2>
+                  If every time hearing about Elon or seeing a Tesla makes you
+                  mad, <em>do something</em>.
+                </h2>
+                <p>
+                  Yes money helps, but the way to make a difference is to couple
+                  it with action and engagement. That’s why we’re asking not
+                  only for your donations, but also your involvement. We need
+                  {" "}
+                  <em>you</em> to [make this work](./how-it-works)
+                </p>
+                <p>
+                  together <em>we</em>{" "}
+                  can show Elon that our democracy is not for sale. Not even to
+                  him.
+                </p>
               </section>
               <section>
-                <h2>How can I help?</h2>
+                <h2>
+                  It’s going to take a lot of time and money, but here's how we
+                  do it (and have fun at the same time):
+                </h2>
                 <p>
                   <ul>
-                    <li>Buy great stuff</li>
-                    <li>Spread the word!</li>
-                    <li>Donate Money</li>
+                    <li>Buy cool stuff and spread the message</li>
+                    <li>
+                      Sign up for our mailing list to keep current with how it's
+                      going
+                    </li>
+                    <li>
+                      Donate critical funds to take Teslas off the streets
+                    </li>
                   </ul>
                 </p>
               </section>
